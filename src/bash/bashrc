@@ -1,0 +1,15 @@
+# First, read the skelton file.
+source /etc/skel/.bashrc
+
+# Set bash history unlimited.
+HISTSIZE=-1
+HISTFILESIZE=-1
+
+# Share bash history across shell instances.
+function share_history {
+    history -a
+    history -c
+    history -r
+}
+PROMPT_COMMAND='share_history'
+shopt -u histappend
