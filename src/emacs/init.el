@@ -1,7 +1,6 @@
-;; Use ~/.emacs.d/backup directory for back up file location.
-;; Put on HDD.
-(setq backup-directory-alist
-      '(("" . (concat user-emacs-directory "backup"))))
+;; Disable backup files.
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; Set forward/backward jump for CTRL+cursor keys.
 (global-set-key "\M-[1;5C"    'forward-word)
