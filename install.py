@@ -115,9 +115,10 @@ def _install_emacs_config(home, google_style_dir, backup=False):
                os.path.join(home, '.emacs.d', 'init.el'),
                backup=backup)
     if google_style_dir:
-        dest = os.path.join(home, '.emacs.d', 'google-c-style.el')
+        dest = os.path.join(home, '.emacs.d', 'google', 'google-c-style.el')
         if backup:
             _backup_file(dest)
+        _makedirs(os.path.dirname(dest), exist_ok=True)
         os.symlink(
             os.path.abspath(os.path.join(
                 google_style_dir, 'styleguide', 'google-c-style.el')),

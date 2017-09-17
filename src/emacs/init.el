@@ -19,7 +19,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; For google-c-style
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path (concat user-emacs-directory "google"))
 (add-hook 'c-mode-common-hook
           '(lambda ()
              (require 'google-c-style)
